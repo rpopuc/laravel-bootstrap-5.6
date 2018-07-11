@@ -1,0 +1,11 @@
+#!/bin/bash
+cd "$(dirname "$0")/.."
+
+source ./bin/_dotenv
+
+docker push rpopuc/${COMPOSE_PROJECT_NAME}-workspace
+docker push rpopuc/${COMPOSE_PROJECT_NAME}-php-fpm
+docker push rpopuc/${COMPOSE_PROJECT_NAME}-nginx
+docker push rpopuc/${COMPOSE_PROJECT_NAME}-postgres
+docker push rpopuc/${COMPOSE_PROJECT_NAME}-redis
+docker push rpopuc/${COMPOSE_PROJECT_NAME}-laravel-echo

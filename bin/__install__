@@ -1,0 +1,12 @@
+#!/bin/bash
+cd "$(dirname "$0")/.."
+
+mv ./bin/install ./bin/__install__
+
+rm -rf .git
+git init
+cp docker-compose.image.yml docker-compose.local.yml
+ln -s docker-compose.local.yml docker-compose.yml
+cd src
+cp .env.server .env.local
+ln -s .env.local .env

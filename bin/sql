@@ -1,0 +1,10 @@
+#!/bin/bash
+cd "$(dirname "$0")/.."
+
+source ./bin/_dotenv
+
+if [ $# -eq 0 ]; then
+    docker-compose exec postgres psql -U $POSTGRES_USER
+else
+    docker-compose exec postgres psql -U $POSTGRES_USER -c "$1"
+fi

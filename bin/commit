@@ -1,0 +1,27 @@
+#!/bin/bash
+cd "$(dirname "$0")/.."
+
+source ./bin/_dotenv
+
+echo "${COMPOSE_PROJECT_NAME}_workspace_1 -> rpopuc/${COMPOSE_PROJECT_NAME}-workspace" && \
+    docker commit ${COMPOSE_PROJECT_NAME}_workspace_1 rpopuc/${COMPOSE_PROJECT_NAME}-workspace && \
+    echo ""
+
+echo "${COMPOSE_PROJECT_NAME}_php-fpm_1 -> rpopuc/${COMPOSE_PROJECT_NAME}-php-fpm" && \
+    docker commit ${COMPOSE_PROJECT_NAME}_php-fpm_1 rpopuc/${COMPOSE_PROJECT_NAME}-php-fpm && \
+    echo ""
+
+echo "${COMPOSE_PROJECT_NAME}_nginx_1 -> rpopuc/${COMPOSE_PROJECT_NAME}-nginx" && \
+    docker commit ${COMPOSE_PROJECT_NAME}_nginx_1 rpopuc/${COMPOSE_PROJECT_NAME}-nginx && \
+    echo ""
+
+echo "${COMPOSE_PROJECT_NAME}_postgres_1 -> rpopuc/${COMPOSE_PROJECT_NAME}-postgres" && \
+    docker commit ${COMPOSE_PROJECT_NAME}_postgres_1 rpopuc/${COMPOSE_PROJECT_NAME}-postgres && \
+    echo ""
+
+echo "${COMPOSE_PROJECT_NAME}_redis_1 -> rpopuc/${COMPOSE_PROJECT_NAME}-redis" && \
+    docker commit ${COMPOSE_PROJECT_NAME}_redis_1 rpopuc/${COMPOSE_PROJECT_NAME}-redis && \
+    echo ""
+
+echo "${COMPOSE_PROJECT_NAME}_laravel-echo_1 -> rpopuc/${COMPOSE_PROJECT_NAME}-laravel-echo" && \
+    docker commit ${COMPOSE_PROJECT_NAME}_laravel-echo_1 rpopuc/${COMPOSE_PROJECT_NAME}-laravel-echo

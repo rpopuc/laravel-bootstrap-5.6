@@ -1,0 +1,10 @@
+#!/bin/bash
+cd "$(dirname "$0")/.."
+
+source ./bin/_dotenv
+
+if [ $# -eq 0 ]; then
+    docker-compose exec workspace bash
+else
+    docker-compose exec workspace --user $1 bash
+fi
