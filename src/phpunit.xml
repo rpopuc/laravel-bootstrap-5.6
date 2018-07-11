@@ -27,5 +27,14 @@
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
+
+        <env name="DB_CONNECTION" value="sqlite" />
+        <env name="DB_DATABASE" value="storage/test.sqlite" />
+        <env name="DB_HOST" value="127.0.0.1" />
     </php>
+    <logging>
+        <log type="junit" target="storage/logs/phpunit/logfile.xml"/>
+        <log type="testdox-html" target="public/reports/testdox.html"/>
+        <log type="testdox-text" target="storage/logs/phpunit/testdox.txt"/>
+    </logging>
 </phpunit>
