@@ -7,6 +7,8 @@ rm -rf .git
 git init
 cp docker-compose.example.yml docker-compose.local.yml
 ln -s docker-compose.local.yml docker-compose.yml
+cp .env.example .env.local
+ln -s .env.local .env
 cd src
-cp .env.exemple .env.local
+cp .env.example .env.local
 ln -s .env.local .env
