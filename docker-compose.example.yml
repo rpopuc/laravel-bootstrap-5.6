@@ -18,15 +18,13 @@ services:
         image: rpopuc/php-fpm:7.2
         volumes:
             - ${APPLICATION}:/var/www
-            - ./config/php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
+            - ./config/php-fpm/php.ini:/usr/local/etc/php/php.ini
         expose:
             - "9000"
         depends_on:
             - workspace
         extra_hosts:
             - "dockerhost:${DOCKER_HOST_IP}"
-        environment:
-            - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
 
 ### Nginx Server Container ##################################
 
