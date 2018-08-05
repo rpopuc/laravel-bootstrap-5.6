@@ -1,0 +1,13 @@
+.env
+
+/data
+/logs
+/docker-compose.yml
+/docker-compose.local.yml
+/src/.env
+/src/.env.local
+/src/node_modules
+/src/vendor
+
+*.local
+*.local.*
